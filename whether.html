@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Weather App Project JavaScript | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/bea3b58fa0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div style="border:solid;" class="  flex flex-col md:flex-row rounded-lg bg-white justify-center items-center gap-12 mt-5 m-5 p-3">
+        <div class="logo">
+            <h2 class="text-blue-600 font-bold  text-2xl md:text-2xl ">Whether Dashboard</h2>
+        </div>
+        <div class="border-solid border-2 border-indigo-400 rounded-l-lg ">
+            <input type="text" id="city_name" class="shrink capitalize  rounded-l-lg outline-none p-4   text-xl "
+                placeholder="Enter City Name" required>
+            <button id="btn" class="h-9 w-5 bg-white rounded-r-lg ">
+                <i class="fa-solid fa-magnifying-glass text-2xl ml-10"></i>
+            </button>
+            <div class="search_history">
+                <table id="table_body">
+            <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <button id="getlocation"><i class="fa-solid fa-location-crosshairs text-2xl m-5"></i></button>
+    </div>
+    <div class="main flex bg-white rounded-lg  w-2/3 sm:w-1/4 md:2/5 justify-center items-center  m-5 ">
+        <div class="current-weather   p-lg col-span-2">
+            <div class="date p-5">
+                <p class="text-lg ">Current Time</p>
+                <h2 class="text-lg font-bold">_____</h2>
+            </div>
+            <div class="img flex justify-center items-center ">
+                <img class="w-40" src="cloud_10.png">
+            </div>
+            <div class="temp flex justify-center items-center text-2xl font-bold text-amber-500 my-5">___°C</div>
+            <div class="whether">
+                <h2 class="text-xl  pl-5">Wind: <span class="text-xl font-bold">___km/h</span></h2>
+                <h2 class=" text-xl  py-8 pl-5">Humidity: <span class="text-xl font-bold">___%</span></h2>
+            </div>
+        </div>
+    </div>
+    <div class="weather-cards grid grid-cols-2 gap-2 m-5 sm:grid-cols-5 md:grid-cols-5">
+        <div id="list_card" class="1 bg-sky-500 rounded-lg p-5 ">
+            <h2 class="last_data text-center font-bold text-white text-xl sm:text-base  ">______</h2>
+            <div class="flex items-center justify-center flex-col "><img class="w-25 h-25" src="cloud_10.png">
+                <p class="font-bold text-white absolute text-2xl">_____</p>
+            </div>
+            <h5 class="last_temp font-bold text-white  m-2">Temp: <span>___°C</span></h5>
+            <h5 class="last_wind font-bold text-white m-2">Wind: <span>___ km/h</span></h5>
+            <h5 class="last_humidity font-bold text-white m-2">Humidity: <span>___%</span></h5>
+        </div>
+        <div id="list_card" class="1 bg-sky-500 rounded-lg p-5 ">
+            <h2 class="last_data text-center font-bold text-white text-xl sm:text-base  ">______</h2>
+            <div class="flex items-center justify-center flex-col "><img class="w-25 h-25" src="cloud_10.png">
+                <p class="font-bold text-white absolute text-2xl">_____</p>
+            </div>
+            <h5 class="last_temp font-bold text-white  m-2">Temp: <span>___°C</span></h5>
+            <h5 class="last_wind font-bold text-white m-2">Wind: <span>___ km/h</span></h5>
+            <h5 class="last_humidity font-bold text-white m-2">Humidity: <span>___%</span></h5>
+        </div>
+        <div id="list_card" class="1 bg-sky-500 rounded-lg p-5 ">
+            <h2 class="last_data text-center font-bold text-white text-xl sm:text-base  ">______</h2>
+            <div class="flex items-center justify-center flex-col "><img class="w-25 h-25" src="cloud_10.png">
+                <p class="font-bold text-white absolute text-2xl">_____</p>
+            </div>
+            <h5 class="last_temp font-bold text-white  m-2">Temp: <span>___°C</span></h5>
+            <h5 class="last_wind font-bold text-white m-2">Wind: <span>___ km/h</span></h5>
+            <h5 class="last_humidity font-bold text-white m-2">Humidity: <span>___%</span></h5>
+        </div>
+        <div id="list_card" class="1 bg-sky-500 rounded-lg p-5 ">
+            <h2 class="last_data text-center font-bold text-white text-xl sm:text-base  ">______</h2>
+            <div class="flex items-center justify-center flex-col "><img class="w-25 h-25" src="cloud_10.png">
+                <p class="font-bold text-white absolute text-2xl">_____</p>
+            </div>
+            <h5 class="last_temp font-bold text-white  m-2">Temp: <span>___°C</span></h5>
+            <h5 class="last_wind font-bold text-white m-2">Wind: <span>___ km/h</span></h5>
+            <h5 class="last_humidity font-bold text-white m-2">Humidity: <span>___%</span></h5>
+        </div>
+        <div id="list_card" class="1 bg-sky-500 rounded-lg p-5 ">
+            <h2 class="last_data text-center font-bold text-white text-xl sm:text-base  ">______</h2>
+            <div class="flex items-center justify-center flex-col "><img class="w-25 h-25" src="cloud_10.png">
+                <p class="font-bold text-white absolute text-2xl">_____</p>
+            </div>
+            <h5 class="last_temp font-bold text-white  m-2">Temp: <span>___°C</span></h5>
+            <h5 class="last_wind font-bold text-white m-2">Wind: <span>___ km/h</span></h5>
+            <h5 class="last_humidity font-bold text-white m-2">Humidity: <span>___%</span></h5>
+        </div>
+    </div>
+</body>
+
+</html>
